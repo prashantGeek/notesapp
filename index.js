@@ -4,7 +4,11 @@ import bodyparser from 'body-parser';
 import cors from 'cors';
 import session from 'express-session';
 import dotenv from 'dotenv';
-import { connectDatabase } from './database/db.js'; // Adjust the import path as necessary
+import { connectDatabase } from './database/db.js';
+import configurePassport from './config/passport.js';
+import passport from 'passport';
+import authRoutes from './routes/authRoutes.js';
+import notesRoutes from './routes/notesRoutes.js';
 
 dotenv.config();
 
