@@ -1,5 +1,7 @@
 import { DataSource } from "typeorm";
 import dotenv from "dotenv";
+import { User } from "../entities/userEntity.js";
+import { Note } from "../entities/noteEntity.js";
 
 // Load environment variables
 dotenv.config();
@@ -13,8 +15,8 @@ export const AppDataSource = new DataSource({
     database: process.env.DB_DATABASE || "notes_db",
     
     synchronize: process.env.NODE_ENV === 'development',
-    logging: process.env.NODE_ENV === 'development',
-    entities: ["./entities/*.js"], // Path to your entity files
+    // logging: process.env.NODE_ENV === 'development',
+    entities: [User, Note], // Path to your entity files
 
 });
 
