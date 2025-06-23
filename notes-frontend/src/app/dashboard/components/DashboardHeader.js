@@ -1,4 +1,5 @@
 'use client';
+import ThemeToggle from '../../components/ThemeToggle';
 
 export default function DashboardHeader({ user, handleLogout }) {
   return (
@@ -15,6 +16,7 @@ export default function DashboardHeader({ user, handleLogout }) {
             </div>
           </div>
           <div className="flex items-center space-x-4">
+            <ThemeToggle />
             <div className="flex items-center space-x-3">
               <div className="relative">
                 <img
