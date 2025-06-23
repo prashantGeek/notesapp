@@ -43,23 +43,30 @@ export default function HomePage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-xl">Loading...</div>
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex items-center justify-center">
+        <div className="text-center">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl mb-4 shadow-xl animate-pulse">
+            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <div className="text-xl text-gray-900 dark:text-white">Loading...</div>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       {/* Header */}
-      <nav className="bg-white/80 backdrop-blur-md border-b border-gray-200/50 sticky top-0 z-50">
+      <nav className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200/50 dark:border-gray-700/50 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">N</span>
               </div>
-              <span className="text-xl font-bold text-gray-900">NotesApp</span>
+              <span className="text-xl font-bold text-gray-900 dark:text-white">NotesApp</span>
             </div>
             
             {user ? (
@@ -77,7 +84,7 @@ export default function HomePage() {
                     </svg>
                   </div>
                 </div>
-                <span className="text-sm font-medium text-gray-700">{user.name}</span>
+                <span className="text-sm font-medium text-gray-700 dark:text-gray-200">{user.name}</span>
               </div>
             ) : (
               <button
@@ -115,11 +122,11 @@ export default function HomePage() {
                   </svg>
                 </div>
               </div>
-              <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+              <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
                 Welcome back, <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">{user.name}!</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8">{user.email}</p>
-              <div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">{user.email}</p>
+              <div className="inline-flex items-center px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-sm font-medium">
                 <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
                 Connected & Ready
               </div>
@@ -127,14 +134,14 @@ export default function HomePage() {
 
             {/* Action Cards */}
             <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto mb-12">
-              <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-200/50 hover:shadow-2xl transition-all duration-300 hover:scale-105 flex flex-col h-full">
+              <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-200/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-300 hover:scale-105 flex flex-col h-full">
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 mx-auto">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2 text-center">My Notes</h3>
-                <p className="text-gray-600 mb-6 text-center flex-grow">Access and manage all your notes in one place</p>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 text-center">My Notes</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-6 text-center flex-grow">Access and manage all your notes in one place</p>
                 <button
                   onClick={() => window.location.href = '/dashboard'}
                   className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 mt-auto"
@@ -143,14 +150,14 @@ export default function HomePage() {
                 </button>
               </div>
 
-              <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-200/50 hover:shadow-2xl transition-all duration-300 hover:scale-105 flex flex-col h-full">
+              <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-200/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-300 hover:scale-105 flex flex-col h-full">
                 <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-xl flex items-center justify-center mb-4 mx-auto">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2 text-center">Sign Out</h3>
-                <p className="text-gray-600 mb-6 text-center flex-grow">Securely logout from your account</p>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 text-center">Sign Out</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-6 text-center flex-grow">Securely logout from your account</p>
                 <button
                   onClick={handleLogout}
                   className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 mt-auto"
@@ -170,13 +177,13 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </div>
-              <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-6">
+              <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
                 Your Digital
                 <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   Notebook
                 </span>
               </h1>
-              <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+              <p className="text-xl text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
                 Capture thoughts, organize ideas, and never lose track of what matters. 
                 Your personal space for creativity and productivity.
               </p>
@@ -184,41 +191,41 @@ export default function HomePage() {
 
             {/* Features */}
             <div className="grid md:grid-cols-3 gap-8 mb-16 max-w-4xl mx-auto">
-              <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200/50">
+              <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200/50 dark:border-gray-700/50">
                 <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4 mx-auto">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Secure & Private</h3>
-                <p className="text-gray-600">Your notes are protected with Google authentication</p>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Secure & Private</h3>
+                <p className="text-gray-600 dark:text-gray-300">Your notes are protected with Google authentication</p>
               </div>
 
-              <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200/50">
+              <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200/50 dark:border-gray-700/50">
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 mx-auto">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Always Synced</h3>
-                <p className="text-gray-600">Access your notes from anywhere, anytime</p>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Always Synced</h3>
+                <p className="text-gray-600 dark:text-gray-300">Access your notes from anywhere, anytime</p>
               </div>
 
-              <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200/50">
+              <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200/50 dark:border-gray-700/50">
                 <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4 mx-auto">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Lightning Fast</h3>
-                <p className="text-gray-600">Create and edit notes with instant response</p>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Lightning Fast</h3>
+                <p className="text-gray-600 dark:text-gray-300">Create and edit notes with instant response</p>
               </div>
             </div>
 
             {/* Login Button */}
-            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-200/50 max-w-md mx-auto">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Ready to get started?</h3>
-              <p className="text-gray-600 mb-6">Sign in with your Google account to begin organizing your thoughts</p>
+            <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-200/50 dark:border-gray-700/50 max-w-md mx-auto">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Ready to get started?</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">Sign in with your Google account to begin organizing your thoughts</p>
               <button
                 onClick={handleLogin}
                 className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center space-x-3"
