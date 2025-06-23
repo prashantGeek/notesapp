@@ -118,6 +118,21 @@ body {
 }
 
 /* Form input enhancements */
+input[type="text"], 
+input[type="email"], 
+textarea,
+select {
+  color: #111827 !important; /* gray-900 */
+  background-color: #ffffff !important; /* white */
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+  color: #9ca3af !important; /* gray-400 - lighter placeholder text */
+  font-weight: inherit !important; /* Use same font weight as input */
+}
+
 input[type="text"]:focus, 
 input[type="email"]:focus, 
 textarea:focus {
