@@ -7,7 +7,6 @@ import LoadingScreen from './components/LoadingScreen';
 import UserHeroSection from './components/UserHeroSection';
 import ActionCards from './components/ActionCards';
 import GuestHeroSection from './components/GuestHeroSection';
-import FeatureCards from './components/FeatureCards';
 import LoginCard from './components/LoginCard';
 
 export default function HomePage() {
@@ -56,24 +55,27 @@ export default function HomePage() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <Header user={user} handleLogin={handleLogin} />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="relative">
         {user ? (
           // User is logged in
-          <div className="text-center">
-            <UserHeroSection user={user} />
-            <ActionCards handleLogout={handleLogout} />
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="text-center">
+              <UserHeroSection user={user} />
+              <ActionCards handleLogout={handleLogout} />
+            </div>
           </div>
         ) : (
           // User is not logged in
-          <div className="text-center">
-            <GuestHeroSection />
-
-            <FeatureCards />
-
-            <LoginCard handleLogin={handleLogin} />
+          <div className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-12">
+            <div className="w-full max-w-4xl mx-auto text-center">
+              <GuestHeroSection />
+              <div className="flex justify-center">
+                <LoginCard handleLogin={handleLogin} />
+              </div>
+            </div>
           </div>
         )}
-      </div>
+      </main>
     </div>
   );
 }
