@@ -1,19 +1,35 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Default to dark theme styling */
+html {
+  color-scheme: dark;
+}
+
+html.light {
+  color-scheme: light;
+}
+
+/* Apply dark theme as default */
+html:not(.light) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(10 10 10 / var(--tw-bg-opacity));
+  color: rgb(237 237 237 / var(--tw-text-opacity));
+}
 
 :root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --card-background: rgba(17, 24, 39, 0.8);
+  --glass-border: rgba(75, 85, 99, 0.3);
+}
+
+:root.light {
   --background: #ffffff;
   --foreground: #171717;
   --card-background: rgba(255, 255, 255, 0.7);
   --glass-border: rgba(255, 255, 255, 0.18);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --card-background: rgba(17, 24, 39, 0.8);
-    --glass-border: rgba(75, 85, 99, 0.3);
-  }
 }
 
 body {
