@@ -105,7 +105,7 @@ router.post('/', requireAuth, async(req, res)=>{
 router.put('/:id', requireAuth, async (req, res)=>{
     try{
         const { title, content} = req.body;
-        const notqeRepository = AppDataSource.getRepository(Note);
+        const noteRepository = AppDataSource.getRepository(Note);
         const note = await noteRepository.findOne({
             where: { 
                 id: parseInt(req.params.id),

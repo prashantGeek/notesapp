@@ -15,6 +15,7 @@ export const authAPI = {
 // Simple notes functions  
 export const notesAPI = {
   getAllNotes: () => api.get('/api/notes'),
+  getNoteById: (id) => api.get(`/api/notes/${id}`),
   createNote: (data) => api.post('/api/notes', data),
   updateNote: (id, data) => api.put(`/api/notes/${id}`, data),
   deleteNote: (id) => api.delete(`/api/notes/${id}`)

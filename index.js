@@ -17,7 +17,7 @@ const port = process.env.PORT || 3000;
 
 // Correctly invoke middleware functions
 app.use(cors({
-    origin: process.env.CLIENT_URL || "http://localhost:3000",
+    origin: process.env.CLIENT_URL || "http://localhost:3001",
     credentials: true, // Allow cookies to be sent
 }));
 app.use(bodyparser.json());
