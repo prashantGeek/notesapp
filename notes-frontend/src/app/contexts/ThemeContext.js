@@ -10,11 +10,6 @@ export function ThemeProvider({ children }) {
   useEffect(() => {
     setMounted(true);
     
-    // Apply default dark theme immediately
-    if (typeof document !== 'undefined') {
-      document.documentElement.classList.add('dark');
-    }
-    
     // Get saved theme or default to dark
     const savedTheme = localStorage.getItem('theme') || 'dark';
     setTheme(savedTheme);
@@ -24,11 +19,7 @@ export function ThemeProvider({ children }) {
   const updateDocumentTheme = (newTheme) => {
     if (typeof document !== 'undefined') {
       const root = document.documentElement;
-      
-      // Remove all theme classes
       root.classList.remove('dark', 'light');
-      
-      // Add the new theme class
       root.classList.add(newTheme);
     }
   };

@@ -16,7 +16,6 @@ export default function HomePage() {
   // check if user is authenticated
   useEffect(() => {
     checkAuth();
-    // eslint-disable-next-line
   }, []);
 
   const checkAuth = async () => {
