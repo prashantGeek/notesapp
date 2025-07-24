@@ -14,23 +14,7 @@ A complete backend application for managing user notes with Google OAuth authent
 
 ## 🏗️ Architecture
 
-```
-notes-backend/
-├── config/
-│   └── passport.js          # Google OAuth configuration
-├── database/
-│   └── db.js               # Database connection setup
-├── entities/
-│   ├── userEntity.js       # User data model
-│   └── noteEntity.js       # Note data model
-├── routes/
-│   ├── authRoutes.js       # Authentication endpoints
-│   └── notesRoutes.js      # Notes CRUD endpoints
-├── index.js                # Main server file
-├── package.json            # Dependencies and scripts
-├── .env                    # Environment variables
-└── docker-compose.yml      # PostgreSQL Docker setup
-```
+
 
 ## 🛠️ Technology Stack
 
