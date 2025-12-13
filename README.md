@@ -334,3 +334,4 @@ This project is for educational purposes. Feel free to use and modify as needed.
 For questions or issues, please check the troubleshooting section or create an issue in the repository.
 
 Next step to deploy on vercel (frontend)
+
